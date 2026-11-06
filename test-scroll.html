@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="css/styles.css"></head>
+<body><div id="out">?</div>
+<script>
+window.addEventListener("load", () => {
+  document.getElementById("out").textContent =
+    "RESULT reducedMotion=" + matchMedia("(prefers-reduced-motion: reduce)").matches +
+    " scrollBehavior=" + getComputedStyle(document.documentElement).scrollBehavior;
+});
+</script>
+</body>
+</html>

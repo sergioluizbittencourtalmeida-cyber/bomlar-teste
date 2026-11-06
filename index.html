@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  SITE DE MARCENARIA — PÁGINA ÚNICA (one page)
+  ------------------------------------------------------------
+  COMO EDITAR (dicas gerais):
+  • Todo texto visível na página está aqui no index.html —
+    procure por textos entre > < e troque direto.
+  • Cada SEÇÃO do site está isolada entre comentários
+    "======== NOME DA SEÇÃO ========". É só localizar a seção
+    que você quer mexer.
+  • As imagens ficam na pasta /img — para trocar uma foto,
+    é só substituir o arquivo mantendo o mesmo nome.
+  • As cores/fontes mudam no css/styles.css (variáveis no topo).
+  • Os botões/filtros/animation ficam no js/script.js.
+============================================================ -->
+<html lang="pt-BR">
+<head>
+  <!-- ---------- METADADOS (aparecem no Google/aba do navegador) ---------- -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcenaria Raízes — Móveis sob medida e marcenaria fina</title> <!-- ← TÍTULO DA ABA: troque pelo nome real da empresa -->
+  <meta name="description" content="Marcenaria artesanal: cozinhas, closets, escadas e móveis sob medida. Projeto, produção e instalação com madeira de primeira qualidade.">
+  <meta name="theme-color" content="#faf7f2">
+  <!-- Open Graph: como o link aparece ao compartilhar no WhatsApp/Instagram -->
+  <meta property="og:title" content="Marcenaria Raízes — Móveis sob medida">
+  <meta property="og:description" content="Projeto, produção e instalação de marcenaria fina. Veja nosso portfólio.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"> <!-- íminha da aba: favicon.svg -->
+
+  <!-- ---------- FONTES (Google Fonts) ----------
+     3 fontes: display (títulos), sans (texto), mono (rótulos pequenos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- ---------- CSS PRÓPRIO (obrigatório) ---------- -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Âncora de acessibilidade: pular para o conteúdo (leitores de tela) -->
+  <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+
+  <!-- ============================================================
+       CABEÇALHO / NAVEGAÇÃO (fixo no topo)
+       - Fica "grudado" no topo e ganha fundo ao rolar (ver js)
+       - Os href="#id" são âncoras: cada uma leva a uma seção
+         da página (as seções têm esses mesmos ids)
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <!-- LOGO: troque o texto "Raízes" e o SVG do símbolo -->
+      <a class="logo" href="#inicio" aria-label="Marcenaria Raízes — início">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <!-- Anel de madeira (símbolo da marca) -->
+          <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+          <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5" opacity=".65"/>
+          <circle cx="16" cy="16" r="3.5" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+        </svg>
+        <span class="logo__text">Raízes</span> <!-- ← NOME DA MARCA -->
+      </a>
+
+      <!-- LINKS DE NAVEGAÇÃO (âncoras internas) -->
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#processo">Processo</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato" class="btn btn--small">Orçamento</a> <!-- botão de destaque -->
+      </nav>
+
+      <!-- BOTÃO HAMBÚRGUER (aparece só no celular) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       SEÇÃO 1 — HERO (primeira dobra, o que o cliente vê primeiro)
+       - Substitua o título, a descrição e a imagem principal
+       - As "pílulas flutuantes" são os cards que aparecem sobre a foto
+  ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="container hero__grid">
+
+      <div class="hero__content reveal">
+        <!-- Rótulo pequeno em mono (estilo "nota de projeto") -->
+        <p class="eyebrow">◆ Marcenaria artesanal · desde 1998</p> <!-- ← desde quando a empresa existe -->
+
+        <h1 class="hero__title">
+          Madeira que<br>
+          vira <em>história</em> <!-- palavra em itálico = destaque colorido -->
+          na sua casa.
+        </h1>
+
+        <p class="hero__sub">
+          Projetamos, produzimos e instalamos móveis sob medida, cozinhas,
+          closets e escadas. Do desenho à última lixa — feito à mão,
+          na medida exata do seu espaço.
+        </p>
+
+        <!-- BOTÕES DE AÇÃO (CTA = call to action) -->
+        <div class="hero__actions">
+          <a href="#contato" class="btn btn--primary">Peça seu orçamento</a>
+          <a href="#portfolio" class="btn btn--ghost">Ver portfólio ↓</a>
+        </div>
+
+        <!-- NÚMEROS DE DESTAQUE (animados ao aparecer na tela) -->
+        <ul class="hero__stats">
+          <li><strong data-count="25" data-suffix="+">0</strong><span>anos de ofício</span></li>
+          <li><strong data-count="800" data-suffix="+">0</strong><span>projetos entregues</span></li>
+          <li><strong data-count="100" data-suffix="%">0</strong><span>sob medida</span></li>
+        </ul>
+      </div>
+
+      <!-- IMAGEM PRINCIPAL + cards flutuantes -->
+      <div class="hero__visual reveal reveal--delay">
+        <img class="hero__img"
+             src="img/hero-oficina.jpg"
+             alt="Marcenário lixando uma peça de madeira na oficina"
+             width="1600" height="1067" fetchpriority="high">
+             <!-- ↑ alt = descrição para acessibilidade (e aparece se a imagem falhar) -->
+
+        <!-- CARD FLUTUANTE 1 (posições no CSS: .float-badge) -->
+        <div class="float-badge float-badge--top">
+          <span class="float-badge__icon">✓</span>
+          <div><strong>100% sob medida</strong><small>nenhuma peça igual à outra</small></div>
+        </div>
+
+        <!-- CARD FLUTUANTE 2 -->
+        <div class="float-badge float-badge--bottom">
+          <span class="float-badge__icon">🪵</span>
+          <div><strong>Origem certificada</strong><small>madeira de reflorestamento</small></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Indicador de rolagem (pequena setinha animada) -->
+    <a class="scroll-hint" href="#sobre" aria-label="Rolar para a seção Sobre">
+      <span></span>
+    </a>
+  </section>
+
+
+  <!-- ============================================================
+       SEÇÃO 2 — FAIXA ROLANTE (marquee)
+       - Palavras que deslizam continuamente (só CSS anima)
+       - Para trocar as palavras: edite os textos abaixo
+  ============================================================ -->
+  <div class="marquee" aria-hidden="true"> <!-- aria-hidden = é decoração, leitor de tela pula -->
+    <div class="marquee__track">
+      <span>Cozinhas</span><i>✦</i><span>Closets</span><i>✦</i><span>Escadas</span><i>✦</i>
+      <span>Estantes</span><i>✦</i><span>Portas</span><i>✦</i><span>Móveis sob medida</span><i>✦</i>
+      <span>Reforma e restauro</span><i>✦</i>
+      <!-- cópia da lista acima, para o loop ficar sem "emenda" -->
+      <span>Cozinhas</span><i>✦</i><span>Closets</span><i>✦</i><span>Escadas</span><i>✦</i>
+      <span>Estantes</span><i>✦</i><span>Portas</span><i>✦</i><span>Móveis sob medida</span><i>✦</i>
+      <span>Reforma e restauro</span><i>✦</i>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SEÇÃO 3 — SOBRE (quem é a empresa)
+       - Coluna de texto + imagem com card de "anos de experiência"
+  ============================================================ -->
+  <section class="section" id="sobre">
+    <div class="container sobre__grid">
+
+      <!-- IMAGEM (lado esquerdo) -->
+      <div class="sobre__visual reveal">
+        <img src="img/sobre-artesao.jpg"
+             alt="Artesão de avental de couro segurando ferramentas na oficina"
+             width="1600" height="1067" loading="lazy">
+        <!-- card com número de anos (destaque sobre a foto) -->
+        <div class="sobre__badge">
+          <strong>25</strong><span>anos<br>de ofício</span>
+        </div>
+      </div>
+
+      <!-- TEXTO (lado direito) -->
+      <div class="sobre__text reveal reveal--delay">
+        <p class="eyebrow">01 — Sobre nós</p>
+        <h2 class="section__title">Oficina de bairro,<br><em>padrão de fábrica.</em></h2>
+        <p class="section__lead">
+          Somos uma marcenaria familiar que nasceu numa garagem em 1998
+          e virou referência em móveis sob medida na região. Aqui, cada
+          projeto passa pela mesa de desenho antes de tocar a serra.
+        </p>
+        <p class="section__text">
+          Trabalhamos com madeiras de reflorestamento (eucalipto, cumaru,
+          freijó, pinus tratado) e ferragens de primeira linha. Você fala
+          direto com quem desenha e com quem constrói — sem intermediário,
+          sem surpresa no orçamento.
+        </p>
+
+        <!-- LISTA DE DIFERENCIAIS (ícones de check) -->
+        <ul class="check-list">
+          <li><span>✓</span> Projeto 3D antes de produzir — você aprova antes</li>
+          <li><span>✓</span> Prazo e preço fechados em contrato</li>
+          <li><span>✓</span> Instalação e ajuste feitos pela própria equipe</li>
+          <li><span>✓</span> 5 anos de garantia na estrutura</li>
+        </ul>
+
+        <p class="sobre__sign">— <strong>Seu Nome</strong>, marceneiro-chefe</p> <!-- ← troque pelo dono -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SEÇÃO 4 — SERVIÇOS (o que a empresa faz)
+       - 6 cards em grade. Para ADICIONAR um card, copie e cole
+         um bloco <article class="service-card">...</article>
+  ============================================================ -->
+  <section class="section section--tint" id="servicos">
+    <div class="container">
+
+      <!-- Cabeçalho padrão das seções (rótulo + título) -->
+      <div class="section__head reveal">
+        <p class="eyebrow">02 — Serviços</p>
+        <h2 class="section__title">O que nós fazemos</h2>
+        <p class="section__lead">Do apartamento compacto ao projeto de arquiteto — escala não assusta.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <!-- CARD 1 -->
+        <article class="service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <!-- SVG ícone (traço, estilo minimalista) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12M12 13h5"/>
+            </svg>
+          </div>
+          <h3>Cozinhas e integrais</h3>
+          <p>Cozinhas completas com bancada, ilha, nichos e eletrodomésticos embutidos. Madeira, MDF laca e porcelanato combinados.</p>
+          <span class="service-card__tag">o mais pedido</span>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M9 11v2M15 11v2"/>
+            </svg>
+          </div>
+          <h3>Closets e estantes</h3>
+          <p>Painéis, estantes suspensas, closets planejados e bibliotecas que aproveitam cada centímetro — inclusive em escadas e sótãos.</p>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="15" cy="12" r="1"/>
+            </svg>
+          </div>
+          <h3>Portas e esquadrias</h3>
+          <p>Portas de entrada, internas e de correr, rodapés, molduras e revestimentos de parede em madeira maciça ou compensado.</p>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M3 21h5v-4h5v-4h5V9h3"/>
+            </svg>
+          </div>
+          <h3>Escadas em madeira</h3>
+          <p>Escadas retas, em L e helicoidais com degraus maciços, guarda-corpos e iluminação embutida. Projeto calculado e certificado.</p>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M4 18v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M4 18h16M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/>
+            </svg>
+          </div>
+          <h3>Móveis sob medida</h3>
+          <p>Mesas, cabeceiras, bancadas, criados-mudos, painéis de TV e petiscos. Do croqui ao acabamento em óleo ou verniz.</p>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5z"/>
+            </svg>
+          </div>
+          <h3>Reforma e restauro</h3>
+          <p>Recuperação de móveis antigos, troca de acabamento, reestruturação e atualização de marcenaria já existente.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SEÇÃO 5 — PORTFÓLIO (galeria de trabalhos)
+       - Cada projeto = 1 bloco <figure class="portfolio-item">
+       - data-category = usado pelos botões de filtro (ver js)
+       - data-title / data-tag = aparecem no lightbox ao clicar
+       - PARA TROCAR UMA FOTO: troque o src="img/....jpg"
+         (o arquivo deve existir na pasta /img)
+  ============================================================ -->
+  <section class="section" id="portfolio">
+    <div class="container">
+
+      <div class="section__head reveal">
+        <p class="eyebrow">03 — Portfólio</p>
+        <h2 class="section__title">Trabalhos recentes</h2>
+        <p class="section__lead">Clique numa foto para ver em tamanho cheio.</p>
+      </div>
+
+      <!-- BOTÕES DE FILTRO (o JS mostra/esconde por categoria) -->
+      <div class="filters reveal" role="group" aria-label="Filtrar projetos">
+        <button class="filter-btn is-active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="cozinha">Cozinhas</button>
+        <button class="filter-btn" data-filter="movel">Móveis</button>
+        <button class="filter-btn" data-filter="ambiente">Ambientes</button>
+        <button class="filter-btn" data-filter="escada">Escadas</button>
+      </div>
+
+      <!-- GRADE DE PROJETOS -->
+      <div class="portfolio__grid" id="portfolio-grid">
+
+        <figure class="portfolio-item reveal" data-category="cozinha" data-title="Cozinha integrada com ilha" data-tag="Cozinha · MDF laca + carvalho">
+          <img src="img/proj-cozinha-clara.jpg" alt="Cozinha moderna clara com ilha e piso de madeira" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Cozinha</span>
+            <strong>Cozinha integrada com ilha</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="cozinha" data-title="Cozinha em madeira escura" data-tag="Cozinha · eucalipto tingido">
+          <img src="img/proj-cozinha-escura.jpg" alt="Cozinha com armários escuros e bancada clara" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Cozinha</span>
+            <strong>Cozinha em madeira escura</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="movel" data-title="Estante suspensa em painel de pinus" data-tag="Móvel · painel + estante">
+          <img src="img/proj-estante.jpg" alt="Parede revestida de madeira com estante branca e relógio" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Móvel</span>
+            <strong>Estante em painel de madeira</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="movel" data-title="Linha de mobiliário de estar" data-tag="Móvel · madeira maciça">
+          <img src="img/proj-mobiliario.jpg" alt="Mobiliário de madeira com plantas em ambiente iluminado" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Móvel</span>
+            <strong>Linha de mobiliário de estar</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="movel" data-title="Banqueta artesanal em freijó" data-tag="Móvel · maciço">
+          <img src="img/proj-banqueta.jpg" alt="Banqueta de madeira sobre fundo de concreto" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Móvel</span>
+            <strong>Banqueta artesanal em freijó</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="ambiente" data-title="Sala de jantar com painéis" data-tag="Ambiente · revestimento completo">
+          <img src="img/proj-jantar.jpg" alt="Sala de jantar com paredes revestidas de madeira e porta de vidro" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Ambiente</span>
+            <strong>Sala de jantar com painéis</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="ambiente" data-title="Sala de estar completa" data-tag="Ambiente · estante + painel">
+          <img src="img/proj-sala.jpg" alt="Sala de estar com estante de madeira e sofá" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Ambiente</span>
+            <strong>Sala de estar completa</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="ambiente" data-title="Loft com marcenaria rústica" data-tag="Ambiente · tijolo + madeira">
+          <img src="img/proj-quarto.jpg" alt="Quarto estilo loft com tijolos aparentes e piso de madeira" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Ambiente</span>
+            <strong>Loft com marcenaria rústica</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio-item reveal" data-category="escada" data-title="Escada helicoidal esculpida" data-tag="Escada · degraus maciços">
+          <img src="img/proj-escada.jpg" alt="Escada em espiral vista de cima" width="1600" height="1067" loading="lazy">
+          <figcaption>
+            <span class="portfolio-item__tag">Escada</span>
+            <strong>Escada helicoidal esculpida</strong>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX: modal de imagem ampliada (escondido; o JS abre) -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Imagem anterior">‹</button>
+    <figure class="lightbox__figure">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Próxima imagem">›</button>
+  </div>
+
+
+  <!-- ============================================================
+       SEÇÃO 6 — PROCESSO (como trabalham, passo a passo)
+       - Seção escura (destaque visual) com 4 etapas
+       - Para mudar uma etapa: edite número, título e texto
+  ============================================================ -->
+  <section class="section section--dark" id="processo">
+    <div class="container">
+
+      <div class="section__head reveal">
+        <p class="eyebrow">04 — Processo</p>
+        <h2 class="section__title">Do primeiro café<br><em>à última parafusagem</em></h2>
+        <p class="section__lead">4 etapas, zero mistério. Você acompanha cada uma.</p>
+      </div>
+
+      <div class="process__grid">
+
+        <!-- ETAPA 1 -->
+        <article class="process-card reveal">
+          <span class="process-card__num">01</span>
+          <img src="img/processo-01-medicao.jpg" alt="Medição de uma peça de madeira com fita métrica" width="1600" height="1067" loading="lazy">
+          <h3>Visita e orçamento</h3>
+          <p>Vamos até você, medimos tudo e ouvimos o que precisa. Orçamento detalhado em 48h, sem compromisso.</p>
+        </article>
+
+        <!-- ETAPA 2 -->
+        <article class="process-card reveal">
+          <span class="process-card__num">02</span>
+          <img src="img/processo-04-marcacao.jpg" alt="Marcação precisa de uma tábua com esquadro" width="1600" height="1067" loading="lazy">
+          <h3>Projeto e aprovação</h3>
+          <p>Você recebe o desenho em 3D com materiais, cores e ferragens escolhidos. Só produzimos quando você ama.</p>
+        </article>
+
+        <!-- ETAPA 3 -->
+        <article class="process-card reveal">
+          <span class="process-card__num">03</span>
+          <img src="img/processo-02-fresa.jpg" alt="Fresadora cortando uma peça de madeira na oficina" width="1600" height="1067" loading="lazy">
+          <h3>Produção na oficina</h3>
+          <p>Corte, colagem, lixa e acabamento — feitos à mão pela nossa equipe, com controle de qualidade em cada peça.</p>
+        </article>
+
+        <!-- ETAPA 4 -->
+        <article class="process-card reveal">
+          <span class="process-card__num">04</span>
+          <img src="img/processo-03-acabamento.jpg" alt="Acabamento final de uma superfície de madeira" width="1600" height="1067" loading="lazy">
+          <h3>Entrega e instalação</h3>
+          <p>Levamos, instalamos, ajustamos e limpamos tudo. Você só precisa apontar onde quer o móvel.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SEÇÃO 7 — DEPOIMENTOS (prova social)
+       - Depoimentos fictícios de exemplo — TROQUE pelos reais!
+       - Para adicionar: copie um bloco <article class="testimonial">
+  ============================================================ -->
+  <section class="section section--tint" id="depoimentos">
+    <div class="container">
+
+      <div class="section__head reveal">
+        <p class="eyebrow">05 — Depoimentos</p>
+        <h2 class="section__title">Quem já reformou com a gente</h2>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <article class="testimonial reveal">
+          <div class="testimonial__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>
+            “A cozinha ficou melhor do que eu imaginava. Prazo cumprido
+            à risca e a equipe deixou tudo limpo no final do dia.”
+          </blockquote>
+          <footer>
+            <span class="testimonial__avatar">MA</span>
+            <div><strong>Mariana Alves</strong><small>Cozinha completa · Pinheiros</small></div>
+          </footer>
+        </article>
+
+        <article class="testimonial reveal">
+          <div class="testimonial__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>
+            “Contratei o restauro do armário da minha avó. Preservaram
+            cada detalhe original. Arte de verdade.”
+          </blockquote>
+          <footer>
+            <span class="testimonial__avatar">RC</span>
+            <div><strong>Roberto Campos</strong><small>Restauro de móvel antigo · Santa Cecília</small></div>
+          </footer>
+        </article>
+
+        <article class="testimonial reveal">
+          <div class="testimonial__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>
+            "Sou arquiteta e exijo muito. Eles entregam desenho bonito
+            e execução impecável. Já indiquei em seis obras."
+          </blockquote>
+          <footer>
+            <span class="testimonial__avatar">JL</span>
+            <div><strong>Juliana Lima</strong><small>Escada e painéis · Vila Madalena</small></div>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SEÇÃO 8 — FAQ (peruntas frequentes)
+       - Usa <details> nativo: abre/fecha sem JavaScript nenhum
+       - Para trocar: edite a pergunta (dentro de <summary>) e a resposta
+  ============================================================ -->
+  <section class="section" id="faq">
+    <div class="container faq__wrap">
+      <div class="faq__intro reveal">
+        <p class="eyebrow">06 — Dúvidas</p>
+        <h2 class="section__title">Perguntas<br>frequentes</h2>
+        <p class="section__lead">Não achou o que procurava? Chame no WhatsApp.</p>
+      </div>
+
+      <div class="faq__list reveal">
+        <details class="faq-item" open>
+          <summary>Quanto tempo leva um projeto?</summary>
+          <p>Cozinhas e closets: 25 a 40 dias após aprovação do projeto. Móveis avulsos: 10 a 20 dias. Prazo exato fica no contrato.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O orçamento tem custo?</summary>
+          <p>Não. A visita técnica, a medição e o orçamento detalhado são gratuitos e sem compromisso.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Que tipo de madeira vocês usam?</summary>
+          <p>Trabalhamos com madeira de reflorestamento certificada: eucalipto, pinus, freijó, cumaru, carvalho e compensado de primeira linha. Também recebemos material indicado por você.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vocês atendem quais regiões?</summary>
+          <p>Toda a capital e região metropolitana. Para projetos fora, avalie o deslocamento no orçamento — normalmente compensa.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SEÇÃO 9 — CONTATO / CHAMADA FINAL
+       - Formulário estático: o JS valida e abre o WhatsApp com a
+         mensagem pronta (ver js/script.js → enviarFormulario)
+       - Para enviar por e-mail/Formspree: veja o comentário no JS
+       - TROQUE: telefone, e-mail, endereço, horário e o número
+         do WhatsApp (aparece no JS também!)
+  ============================================================ -->
+  <section class="section section--dark contact" id="contato">
+    <div class="container contact__grid">
+
+      <!-- LADO 1: formulário -->
+      <div class="contact__form-wrap reveal">
+        <p class="eyebrow">07 — Orçamento</p>
+        <h2 class="section__title">Bora transformar<br><em>seu sonho em realidade</em></h2>
+        <p class="section__lead">Conte o que você precisa — respondemos em até 1 dia útil.</p>
+
+        <form class="contact__form" id="contact-form" novalidate>
+          <!-- novalidate = nós controlamos a validação no JS (mensagem em português) -->
+
+          <div class="field">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required>
+            <small class="field__error" data-error-for="nome"></small>
+          </div>
+
+          <div class="field">
+            <label for="telefone">WhatsApp *</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+            <small class="field__error" data-error-for="telefone"></small>
+          </div>
+
+          <div class="field">
+            <label for="tipo">Tipo de projeto</label>
+            <select id="tipo" name="tipo">
+              <option>Cozinha</option>
+              <option>Closet / Estante</option>
+              <option>Porta / Esquadria</option>
+              <option>Escada</option>
+              <option>Móvel sob medida</option>
+              <option>Reforma / Restauro</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mensagem">Conte um pouco mais *</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex.: quero uma cozinha de 3x4m com ilha…" required></textarea>
+            <small class="field__error" data-error-for="mensagem"></small>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">
+            Enviar pelo WhatsApp →
+          </button>
+          <p class="contact__note">Ou fale direto: <a href="https://wa.me/5511999999999">wa.me/5511999999999</a></p>
+        </form>
+      </div>
+
+      <!-- LADO 2: dados de contato (cards) -->
+      <aside class="contact__info reveal reveal--delay">
+        <div class="info-card">
+          <span class="info-card__icon" aria-hidden="true">✆</span>
+          <div><small>WhatsApp / Telefone</small><a href="tel:+5511999999999">(11) 99999-9999</a></div>
+        </div>
+        <div class="info-card">
+          <span class="info-card__icon" aria-hidden="true">✉</span>
+          <div><small>E-mail</small><a href="mailto:contato@marcenariaraizes.com.br">contato@marcenariaraizes.com.br</a></div>
+        </div>
+        <div class="info-card">
+          <span class="info-card__icon" aria-hidden="true">◎</span>
+          <div><small>Oficina</small><address>Rua Exemplo, 123 — Vila Madeira<br>São Paulo — SP</address></div>
+        </div>
+        <div class="info-card">
+          <span class="info-card__icon" aria-hidden="true">◷</span>
+          <div><small>Horário</small><p>Seg a Sex, 8h às 18h<br>Sábado, 8h às 12h</p></div>
+        </div>
+
+        <!-- Foto da oficina ao lado dos contatos -->
+        <img class="contact__photo" src="img/cta-serra.jpg" alt="Marcenário serrando uma tábua de madeira" width="1600" height="1067" loading="lazy">
+      </aside>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RODAPÉ (footer)
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__top">
+
+      <a class="logo" href="#inicio">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+          <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5" opacity=".65"/>
+          <circle cx="16" cy="16" r="3.5" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+        </svg>
+        <span class="logo__text">Raízes</span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#processo">Processo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <!-- REDES SOCIAIS: troque os # pelos links reais -->
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1z"/></svg>
+        </a>
+        <a href="https://wa.me/5511999999999" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5l1.5-1.5-2-1.5-.8.8c-1-.5-1.8-1.3-2.3-2.3l.8-.8L9.7 8 8.5 9.5z" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Marcenaria Raízes — todos os direitos reservados.</p>
+      <p class="footer__hint">Site demonstrativo · Criado por Sérgio Luiz</p>
+    </div>
+  </footer>
+
+  <!-- ---------- JAVASCRIPT (obrigatório, no fim da página) ---------- -->
+  <script src="js/script.js"></script>
+</body>
+</html>
